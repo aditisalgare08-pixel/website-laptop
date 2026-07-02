@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Laptop Store</title>
+
+<style>
+body{
+    background-image:url("https://images.unsplash.com/photo-1496181133206-80ce9b88a853");
+    background-size:cover;
+    font-family:Arial;
+}
+
+h1{
+    text-align:center;
+    color:white;
+    text-decoration:underline;
+}
+
+.box{
+    width:400px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border:3px solid blue;
+}
+
+label{
+    color:navy;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:8px;
+    margin-bottom:10px;
+}
+
+.name{border:2px dashed green;}
+.email{border:2px dotted blue;}
+.password{border:2px solid red;}
+.mobile{border:3px double purple;}
+.brand{border:3px inset orange;}
+
+#btn{
+    background:green;
+    color:white;
+    border:2px solid black;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1 style="background-color:black;">Laptop Store</h1>
+
+<div class="box">
+
+<form id="myForm">
+
+<label>Name:</label><br>
+<input type="text" id="name" class="name" required><br>
+
+<label>Email:</label><br>
+<input type="email" id="email" class="email" required><br>
+
+<label>Password:</label><br>
+<input type="password" id="password" class="password" required><br>
+
+<label>Phone:</label><br>
+<input type="tel" id="mobile" class="mobile" maxlength="10" required><br>
+
+<label>Select Laptop Brand:</label><br>
+<input type="text" id="brand" class="brand" placeholder="HP / Dell / Lenovo" required><br>
+
+<input type="submit" value="Register" id="btn">
+
+</form>
+
+</div>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let mobile = document.getElementById("mobile").value.trim();
+    let brand = document.getElementById("brand").value.trim();
+
+    if(name=="" || email=="" || password=="" || mobile=="" || brand==""){
+        alert("Please fill all fields");
+        return;
+    }
+
+    if(mobile.length != 10){
+        alert("Enter valid 10 digit mobile number");
+        return;
+    }
+
+    alert("Registration Successful!");
+
+    window.open("https://www.hp.com/in-en/shop/", "_blank");
+});
+</script>
+
+</body>
+</html>
